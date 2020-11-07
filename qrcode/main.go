@@ -6,6 +6,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"os"
 	"strings"
 
@@ -14,6 +15,7 @@ import (
 
 func main() {
 	outFile := flag.String("o", "", "out PNG file prefix, empty for stdout")
+	outFormat := flag.String("f", "png", "output format PNG(default) or SVG")
 	size := flag.Int("s", 256, "image size (pixel)")
 	textArt := flag.Bool("t", false, "print as text-art on stdout")
 	negative := flag.Bool("i", false, "invert black and white")
@@ -67,15 +69,21 @@ Usage:
 		q.ForegroundColor, q.BackgroundColor = q.BackgroundColor, q.ForegroundColor
 	}
 
+
 	var png []byte
-	png, err = q.PNG(*size)
-	checkError(err)
+	if *outFormat=="png" {
+		png, err = q.PNG(*size)
+		checkError(err)
+	} else if *outFormat=="svg" {
+		log.Print("Creating a SVG")
+		q.SVG()
+	}
 
 	if *outFile == "" {
 		os.Stdout.Write(png)
 	} else {
 		var fh *os.File
-		fh, err = os.Create(*outFile + ".png")
+		fh, err = os.Create(*outFile + "."+ *outFormat)
 		checkError(err)
 		defer fh.Close()
 		fh.Write(png)
