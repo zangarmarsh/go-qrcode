@@ -400,10 +400,14 @@ func (q *QRCode) SVG() (string, error) {
 	c := q.Canvas()
 	// import "bytes"
 	buf := new(bytes.Buffer)
-	c.WriteFile("out.svg", svg.Writer)
-	c.WriteFile("out.pdf", pdf.Writer)
-	c.WriteFile("out.eps", eps.Writer)
-	c.WriteFile("out.png", rasterizer.PNGWriter(3.2))
+	w := svg.Writer
+
+	w(buf,c)
+	// for debug
+	c.WriteFile("qrcode_out.svg", svg.Writer)
+	c.WriteFile("qrcode_out.pdf", pdf.Writer)
+	c.WriteFile("qrcode_out.eps", eps.Writer)
+	c.WriteFile("qrcode_out.png", rasterizer.PNGWriter(3.2))
 	return buf.String(), nil
 }
 
