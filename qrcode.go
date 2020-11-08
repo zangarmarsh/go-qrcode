@@ -396,7 +396,7 @@ func (q *QRCode) PNG(size int) ([]byte, error) {
 // size is both the image width and height in pixels. If size is too small then
 // a larger image is silently returned. Negative values for size cause a
 // variable sized image to be returned: See the documentation for Image().
-func (q *QRCode) SVG() (string, error) {
+func (q *QRCode) SVGStr() (string, error) {
 	c := q.Canvas()
 	// import "bytes"
 	buf := new(bytes.Buffer)
