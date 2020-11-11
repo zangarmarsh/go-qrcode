@@ -353,7 +353,7 @@ func (q *QRCode) Canvas() *canvas.Canvas {
 	ctx.DrawPath(float64(0), float64(0), canvas.Rectangle(float64(size), float64(size)))
 
 	// Saves a few bytes to have them in this order
-	ctx.SetFillColor(canvas.Blue)
+	ctx.SetFillColor(canvas.Darkblue)
 
 	// QR code bitmap.
 	bitmap := q.symbol.bitmap()
@@ -396,7 +396,7 @@ func (q *QRCode) PNG(size int) ([]byte, error) {
 // size is both the image width and height in pixels. If size is too small then
 // a larger image is silently returned. Negative values for size cause a
 // variable sized image to be returned: See the documentation for Image().
-func (q *QRCode) SVGStr() (string, error) {
+func (q *QRCode) SVG() (string, error) {
 	c := q.Canvas()
 	// import "bytes"
 	buf := new(bytes.Buffer)
@@ -404,10 +404,10 @@ func (q *QRCode) SVGStr() (string, error) {
 
 	w(buf,c)
 	// for debug
-	c.WriteFile("qrcode_out.svg", svg.Writer)
-	c.WriteFile("qrcode_out.pdf", pdf.Writer)
-	c.WriteFile("qrcode_out.eps", eps.Writer)
-	c.WriteFile("qrcode_out.png", rasterizer.PNGWriter(3.2))
+	 c.WriteFile("qrcode_out.svg", svg.Writer)
+	 c.WriteFile("qrcode_out.pdf", pdf.Writer)
+	 c.WriteFile("qrcode_out.eps", eps.Writer)
+	 c.WriteFile("qrcode_out.png", rasterizer.PNGWriter(3.2))
 	return buf.String(), nil
 }
 

@@ -76,7 +76,7 @@ Usage:
 		checkError(err)
 	} else if *outFormat=="svg" {
 		log.Print("Creating a SVG")
-		qrSVG,_ := q.SVGStr()
+		qrSVG,_ := q.SVG()
 		fmt.Printf("SVG= %s \n", qrSVG)
 	}
 

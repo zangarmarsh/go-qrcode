@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9c2a07f5-aa4d-4c10-b18d-92ef9cb48202" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qrcode.go" beforeDir="false" afterPath="$PROJECT_DIR$/qrcode.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qrcode/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/qrcode/main.go" afterDir="false" />
     </list>
@@ -38,7 +36,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Go Test.qrcode_decode_test.go">
+  <component name="RunManager" selected="Go Build.go build qrcode.go">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-qrcode" />
       <working_directory value="$PROJECT_DIR$" />
@@ -48,7 +46,7 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build qrcode.go" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+    <configuration name="go build qrcode.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-qrcode" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
