@@ -1,4 +1,4 @@
-module github.com/namsor/go-qrcode
+module github.com/zangarmarsh/go-qrcode
 
 go 1.13
 

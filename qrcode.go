@@ -349,11 +349,11 @@ func (q *QRCode) Canvas() *canvas.Canvas {
 
 	c := canvas.New(float64(size), float64(size))
 	ctx := canvas.NewContext(c)
-	ctx.SetFillColor(canvas.Yellow)
+	ctx.SetFillColor(canvas.White)
 	ctx.DrawPath(float64(0), float64(0), canvas.Rectangle(float64(size), float64(size)))
 
 	// Saves a few bytes to have them in this order
-	ctx.SetFillColor(canvas.Darkblue)
+	ctx.SetFillColor(canvas.Black)
 
 	// QR code bitmap.
 	bitmap := q.symbol.bitmap()
